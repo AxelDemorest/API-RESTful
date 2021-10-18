@@ -1,11 +1,12 @@
 const express = require("express")
 const routes =  require('./routes'); 
 const mongoose = require('mongoose');
+const { URI } = require('./config/config.json')
 
 const app = express()
 
 // Connexion à la database
-mongoose.connect("mongodb+srv://axel:root@nodeapi.svwdg.mongodb.net/NodeApiDatabase?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect(URI, {useNewUrlParser: true});
 
 app.use(express.json())
 
